@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -10,9 +11,15 @@ public class HelloWorldJavaFX extends Application{
     
     public static void main(String[] args) {
         launch();
-}
+    }
+    
+    String musica = getClass().getResource("TeatroMagico.mp3").toString();
+            
     @Override
     public void start (Stage palco) {
+        //Trilha Sonora
+        AudioClip clip = new AudioClip(musica);
+        clip.play();
         //Personagem
         Rectangle ceu = new Rectangle(900, 450, Color.DARKRED);
         Rectangle mar = new Rectangle(900, 450, Color.DARKBLUE);
